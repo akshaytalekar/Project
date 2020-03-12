@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+
+    tools:showIn="navigation_view"
+    >
+
+    <group android:checkableBehavior="single">
+        <item
+            android:id="@+id/nav_home"
+            android:fontFamily="@font/font1"
+            android:title="@string/menu_home" />
+        <item
+            android:id="@+id/nav_searchhome"
+            android:title="@string/menu_searchhome" />
+        <item
+            android:id="@+id/nav_postmyproperty"
+            android:title="@string/menu_postmyproperty" />
+        <item
+            android:id="@+id/nav_myshortlisted"
+            android:title= "@string/menu_myshortlisted" />
+        <item
+            android:id="@+id/nav_payrent"
+            android:title="@string/menu_payrent" />
+        <item
+            android:id="@+id/nav_rentreceipts"
+            android:title="@string/menu_rentreceipts" />
+        <item
+            android:id="@+id/nav_packersmovers"
+            android:title="@string/menu_packersmovers" />
+        <item
+            android:id="@+id/nav_referearn"
+            android:title="@string/menu_referearn" />
+        <item
+            android:id="@+id/nav_eagreement"
+            android:title="@string/menu_eagreement" />
+        <item
+            android:id="@+id/nav_feedback"
+            android:title="@string/menu_feedback" />
+        <item
+            android:id="@+id/nav_logout"
+            android:title="@string/menu_logout" />
+
+
+
+
+
+
+
+    </group>
+</menu>

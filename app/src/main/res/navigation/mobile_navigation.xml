@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/nav_home">
+
+    <fragment
+        android:id="@+id/nav_home"
+        android:name="com.example.project.ui.home.HomeFragment"
+        android:label="@string/menu_home"
+        tools:layout="@layout/fragment_home">
+
+        <action
+            android:id="@+id/action_HomeFragment_to_HomeSecondFragment"
+            app:destination="@id/nav_home_second" />
+    </fragment>
+    <fragment
+        android:id="@+id/nav_home_second"
+        android:name="com.example.project.ui.home.HomeSecondFragment"
+        android:label="@string/home_second"
+        tools:layout="@layout/fragment_home_second">
+        <action
+            android:id="@+id/action_HomeSecondFragment_to_HomeFragment"
+            app:destination="@id/nav_home" />
+
+        <argument
+            android:name="myArg"
+            app:argType="string" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/nav_gallery"
+        android:name="com.example.project.ui.gallery.GalleryFragment"
+        android:label="@string/menu_gallery"
+        tools:layout="@layout/fragment_gallery" />
+
+    <fragment
+        android:id="@+id/nav_slideshow"
+        android:name="com.example.project.ui.slideshow.SlideshowFragment"
+        android:label="@string/menu_slideshow"
+        tools:layout="@layout/fragment_slideshow" />
+    <fragment
+        android:id="@+id/nav_searchhome"
+        android:name="com.example.project.ui.search_home.searchhome"
+        android:label="@string/menu_searchhome"
+        tools:layout="@layout/searchhome_fragment" />
+    <fragment
+        android:id="@+id/nav_postmyproperty"
+        android:name="com.example.project.ui.Post_My_Property.postmyproperty"
+        android:label="@string/menu_postmyproperty"
+        tools:layout="@layout/postmyproperty_fragment" />
+    <fragment
+        android:id="@+id/nav_myshortlisted"
+        android:name="com.example.project.ui.My_Shortlisted.myshortlisted"
+        android:label="@string/menu_myshortlisted"
+        tools:layout="@layout/myshortlisted_fragment" />
+    <fragment
+        android:id="@+id/nav_payrent"
+        android:name="com.example.project.ui.Pay_Rent.payrent"
+        android:label="@string/menu_payrent"
+        tools:layout="@layout/payrent_fragment" />
+    <fragment
+        android:id="@+id/nav_rentreceipts"
+        android:name="com.example.project.ui.Rent_Receipts.rentreceipts"
+        android:label="@string/menu_rentreceipts"
+        tools:layout="@layout/rentreceipts_fragment" />
+    <fragment
+        android:id="@+id/nav_packersmovers"
+        android:name="com.example.project.ui.Packers_Movers.packersmovers"
+        android:label="@string/menu_packersmovers"
+        tools:layout="@layout/packersmovers_fragment" />
+    <fragment
+        android:id="@+id/nav_referear"
+        android:name="com.example.project.ui.Refer_Earn.referearn"
+        android:label="@string/menu_referearn"
+        tools:layout="@layout/referearn_fragment" />
+
+    <fragment
+        android:id="@+id/nav_eagreement"
+        android:name="com.example.project.ui.e_Agreement.eagreement"
+        android:label="@string/menu_eagreement"
+        tools:layout="@layout/eagreement_fragment" />
+
+    <fragment
+        android:id="@+id/nav_feedback"
+        android:name="com.example.project.ui.Feedback.feedback"
+        android:label="@string/menu_feedback"
+        tools:layout="@layout/feedback_fragment" />
+
+    <fragment
+        android:id="@+id/nav_logout"
+        android:name="com.example.project.ui.Logout.logout"
+        android:label="@string/menu_logout"
+        tools:layout="@layout/logout_fragment" />
+
+</navigation>

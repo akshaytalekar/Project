@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#C0C0C0">
+
+    <TextView
+        android:id="@+id/textView4"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+
+        android:text="Packers &amp; Movers"
+        android:textColor="#044E47"
+        android:gravity="center"
+        android:textStyle="bold"
+        android:textSize="35sp"/>
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="10dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/client_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Client's Name"
+            android:padding="10dp"
+            android:textColor="#044E47"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/client_name_edit"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:textSize="20sp"
+            android:textColorHint="#044E47"
+            android:background="@drawable/corner1"
+            android:hint="  Enter Client's Name" />
+
+        <TextView
+            android:id="@+id/client_phone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Client's Phone"
+            android:padding="10dp"
+            android:textColor="#044E47"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/client_phone_edit"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:textSize="20sp"
+            android:textColorHint="#044E47"
+
+            android:background="@drawable/corner1"
+
+            android:hint="  Enter Client's Phone" />
+
+        <TextView
+            android:id="@+id/city"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="City"
+            android:padding="10dp"
+            android:textColor="#044E47"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/city_edit"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:textSize="20sp"
+            android:textColorHint="#044E47"
+
+            android:background="@drawable/corner1"
+            android:hint="  Enter City"
+            />
+
+        <TextView
+            android:id="@+id/moving_From"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:text="Moving From"
+            android:textColor="#044E47"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/moving_from_edit"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:textSize="20sp"
+            android:textColorHint="#044E47"
+            android:background="@drawable/corner1"
+
+            android:hint="  Select Nearest Landmark" />
+
+        <TextView
+            android:id="@+id/Mmving_to"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Moving To"
+            android:padding="10dp"
+            android:textColor="#044E47"
+            android:textSize="20sp" />
+
+        <EditText
+            android:id="@+id/moving_to_edit"
+            android:layout_width="match_parent"
+            android:layout_height="35dp"
+            android:textSize="20sp"
+            android:textColorHint="#044E47"
+            android:background="@drawable/corner1"
+            android:hint="  Enter Nearest Landmark" />
+
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_weight="1"
+        android:layout_height="match_parent">
+        <Button
+            android:id="@+id/button4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:textAllCaps="false"
+            android:textStyle="bold"
+            android:layout_gravity="bottom"
+            android:background="#044E47"
+            android:textSize="20dp"
+            android:textColor="#FFEB3B"
+            android:text="Get Quotes" />
+    </LinearLayout>
+
+
+</LinearLayout>
