@@ -17,7 +17,7 @@
         android:layout_height="wrap_content"
         android:textColor="@color/c4"
         android:fontFamily="@font/times_roman"
-        android:textSize="25dp"
+        android:textSize="25sp"
         android:text="Landlord's Registration" />
 
     <EditText
@@ -47,7 +47,7 @@
         android:background="@drawable/corner1"
         android:layout_margin="10dp"
         android:gravity="center"
-        android:inputType="textPersonName"
+        android:inputType="textEmailAddress"
         android:hint="Email Address" />
 
     <EditText

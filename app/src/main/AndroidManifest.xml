@@ -12,7 +12,7 @@
         <activity
             android:name=".Nav_tenant"
             android:label="@string/title_activity_nav_tenant"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar"/>
         <activity android:name=".TenantReg" />
         <activity android:name=".LandlordReg" />
         <activity
