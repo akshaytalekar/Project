@@ -45,4 +45,17 @@
     <string name="menu_logout">Logout</string>
 
     <string name="home_second">Home Second</string>
+
+
+
+        <string name="nameerror">Enter Valid Name</string>
+        <string name="emailerror">Enter Valid Email Id</string>
+        <string name="passworderror">Password contain more than 8 characters</string>
+        <string name="mobileerror">Enter Valid Mobile Number</string>
+
+    <string name="s_pref_file">com.example.project.sh_preference_file</string>
+    <string name="s_pref_login_status">com.example.sh_preference_login_status</string>
+    <string name="s_pref_name">sh_preference_name</string>
+    <string name="s_pref_email">sh_preference_email</string>
+    <string name="s_pref_date">sh_preference_date</string>
 </resources>

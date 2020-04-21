@@ -71,7 +71,7 @@
         android:label="@string/menu_packersmovers"
         tools:layout="@layout/packersmovers_fragment" />
     <fragment
-        android:id="@+id/nav_referear"
+        android:id="@+id/nav_referearn"
         android:name="com.example.project.ui.Refer_Earn.referearn"
         android:label="@string/menu_referearn"
         tools:layout="@layout/referearn_fragment" />

@@ -21,7 +21,7 @@
         android:textSize="28dp" />
 
     <EditText
-        android:id="@+id/editName"
+        android:id="@+id/tenenteditName"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:layout_margin="10dp"
@@ -31,7 +31,7 @@
         android:hint="Name" />
 
     <EditText
-        android:id="@+id/editMobile"
+        android:id="@+id/tenenteditMobile"
         android:layout_width="match_parent"
         android:layout_margin="10dp"
         android:layout_height="40dp"
@@ -41,7 +41,7 @@
         android:hint="Mobile Number" />
 
     <EditText
-        android:id="@+id/editEmail"
+        android:id="@+id/tenenteditEmail"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:gravity="center"
@@ -51,7 +51,7 @@
         android:hint="Email Address" />
 
     <EditText
-        android:id="@+id/editpassword"
+        android:id="@+id/tenenteditpassword"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:gravity="center"
@@ -61,7 +61,7 @@
         android:hint="Password" />
 
     <EditText
-        android:id="@+id/editConfirm"
+        android:id="@+id/tenenteditConfirm"
         android:layout_width="match_parent"
         android:layout_height="40dp"
         android:background="@drawable/corner1"

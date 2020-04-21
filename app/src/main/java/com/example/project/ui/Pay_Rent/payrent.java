@@ -16,8 +16,6 @@ import com.example.project.R;
 
 public class payrent extends Fragment {
 
-    private PayrentViewModel mViewModel;
-
     public static payrent newInstance() {
         return new payrent();
     }
@@ -28,11 +26,6 @@ public class payrent extends Fragment {
         return inflater.inflate(R.layout.payrent_fragment, container, false);
     }
 
-    @Override
-    public void onActivityCreated(@Nullable Bundle savedInstanceState) {
-        super.onActivityCreated(savedInstanceState);
-        mViewModel = ViewModelProviders.of(this).get(PayrentViewModel.class);
-        // TODO: Use the ViewModel
-    }
+
 
 }

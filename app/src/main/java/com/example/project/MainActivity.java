@@ -1,96 +1,108 @@
 package com.example.project;
 
-import android.content.Intent;
-import android.content.pm.ActivityInfo;
-import android.os.Bundle;
-import android.view.View;
-import android.widget.Button;
-import android.widget.EditText;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
-import android.widget.TextView;
-import android.widget.Toast;
-
 import androidx.appcompat.app.AppCompatActivity;
 
-public class MainActivity extends AppCompatActivity {
-    Button submit;
-    RadioButton radlandlord,radtenant;
-    TextView textView,textView2,regland,regten;
-    EditText edemail,edpass;
-    RadioGroup radioGroup;
-    static int flag ;
+import android.content.Intent;
+import android.os.Bundle;
+import android.widget.FrameLayout;
+
+
+import com.example.project.R;
+import com.example.project.constants.Constant;
+import com.example.project.extras.AppPreference;
+import com.example.project.fragment.LandRegistrationFragment;
+import com.example.project.fragment.LoginFragment;
+import com.example.project.fragment.ProfileFragment;
+import com.example.project.fragment.TenRegistrationFragment;
+import com.example.project.services.MyInterface;
+import com.example.project.services.RetrofitClient;
+import com.example.project.services.ServiceApiL;
+import com.example.project.services.ServiceApiT;
+
+public class MainActivity extends AppCompatActivity implements MyInterface {
+    public static AppPreference appPreference;
+    public static String c_date;
+    FrameLayout container_layout;
+    public static ServiceApiL serviceApiL;
+    public static ServiceApiT serviceApiT;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-        setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_UNSPECIFIED);
+        container_layout = findViewById(R.id.fragment_container);
+        appPreference = new AppPreference(this);
 
-        submit=findViewById(R.id.button);
-        regland=findViewById(R.id.textView8);
-        regten=findViewById(R.id.textView9);
-        // RadioButton for landlord
-        radlandlord=findViewById(R.id.radioButton);
-        // RadioButton for tanent
-        radtenant=findViewById(R.id.radioButton2);
-        edemail=findViewById(R.id.editText2);
-        edpass=findViewById(R.id.editText3);
-        radioGroup = findViewById(R.id.landtent);
-        radioGroup.setOnCheckedChangeListener(new RadioGroup.OnCheckedChangeListener() {
-            @Override
-            public void onCheckedChanged(RadioGroup group, int checkedId) {
-               if(radlandlord.isChecked())
-               {
-                   flag =1;
-               }
-               else if (radtenant.isChecked())
-               {
-                   flag=2;
-               }
-            }
-        });
-        regland.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,LandlordReg.class);
-                startActivity(intent);
-            }
-        });
-        regten.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Intent intent=new Intent(MainActivity.this,TenantReg.class);
-                startActivity(intent);
-            }
-        });
-        submit.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-              if(flag!=0)
-              {
-                 switch (flag) {
-                     case 1:
-                         Toast.makeText(MainActivity.this, "Landlord", Toast.LENGTH_SHORT).show();
-                         flag = 0;
-                         radioGroup.clearCheck();
-                         break;
-                     case 2:
-                         Toast.makeText(MainActivity.this, "Tanent", Toast.LENGTH_SHORT).show();
-                         flag = 0;
-                         radioGroup.clearCheck();
-                         break;
-                 }
-              }
-              else
-              {
-                  Toast.makeText(MainActivity.this, "Kindly Select Role", Toast.LENGTH_SHORT).show();
-              }
+        serviceApiL = RetrofitClient.getApiClient(Constant.baseUrl.BASE_URL).create(ServiceApiL.class);
+        serviceApiT = RetrofitClient.getApiClient(Constant.baseUrl.BASE_URL).create(ServiceApiT.class);
 
-                //  Intent intent=new Intent(MainActivity.this,Nav_tenant.class);
-              //  startActivity(intent);
 
+        if (container_layout != null) {
+            if (savedInstanceState != null) {
+                return;
             }
-        });
+            //check login status from sharedPreference
+            if (appPreference.getLoginStatus()) {
+                //when true
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(R.id.fragment_container, new ProfileFragment())
+                        .commit();
+            } else {
+                // when get false
+                getSupportFragmentManager()
+                        .beginTransaction()
+                        .add(R.id.fragment_container, new LoginFragment())
+                        .commit();
+            }
+        }
+    }
+
+    @Override
+    public void register() {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new TenRegistrationFragment())
+                .addToBackStack(null)
+                .commit();
+
+    }
+
+    @Override
+    public void registerL() {
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new LandRegistrationFragment())
+                .addToBackStack(null)
+                .commit();
+
+    }
+
+    @Override
+    public void login(String name, String email, String created_at) {
+        appPreference.setDisplayName(name);
+        appPreference.setDisplayEmail(email);
+        appPreference.setCreDate(created_at);
+
+        /*getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new ProfileFragment())
+                .commit();*/
+
+    }
+
+    @Override
+    public void logout() {
+        appPreference.setLoginStatus(false);
+        appPreference.setDisplayName("Name");
+        appPreference.setDisplayEmail("Email");
+        appPreference.setCreDate("DATE");
+
+        getSupportFragmentManager()
+                .beginTransaction()
+                .replace(R.id.fragment_container, new LoginFragment())
+                .commit();
+
     }
 }
