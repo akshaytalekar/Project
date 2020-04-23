@@ -2,6 +2,8 @@ package com.example.project;
 
 import android.os.Bundle;
 import android.view.Menu;
+import android.view.View;
+import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
@@ -14,6 +16,8 @@ import androidx.navigation.ui.NavigationUI;
 import com.google.android.material.navigation.NavigationView;
 
 public class Nav_tenant extends AppCompatActivity {
+    TextView name;
+    View hView;
 
     private AppBarConfiguration mAppBarConfiguration;
 
@@ -33,6 +37,11 @@ public class Nav_tenant extends AppCompatActivity {
         });*/
         DrawerLayout drawer = findViewById(R.id.drawer_layout);
         NavigationView navigationView = findViewById(R.id.nav_view);
+        hView=navigationView.getHeaderView(0);
+
+        name=hView.findViewById(R.id.profName);
+        String Name =MainActivity.appPreference.getDisplayName();
+        name.setText(Name);
         // Passing each menu ID as a set of Ids because each
         // menu should be considered as top level destinations.
         mAppBarConfiguration = new AppBarConfiguration.Builder(

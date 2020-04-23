@@ -18,6 +18,7 @@ import com.example.project.services.MyInterface;
 import com.example.project.services.RetrofitClient;
 import com.example.project.services.ServiceApiL;
 import com.example.project.services.ServiceApiT;
+import com.example.project.ui.home.HomeFragment;
 
 public class MainActivity extends AppCompatActivity implements MyInterface {
     public static AppPreference appPreference;

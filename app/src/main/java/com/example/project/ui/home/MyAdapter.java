@@ -16,6 +16,7 @@ import com.example.project.R;
 import java.util.ArrayList;
 import java.util.HashMap;
 
+
 public class MyAdapter extends RecyclerView.Adapter<MyAdapter.ViewHolder> {
     Context mContext;
     ArrayList<HashMap<String, String>> mArray;

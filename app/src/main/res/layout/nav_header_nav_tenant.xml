@@ -32,13 +32,13 @@
         android:textAppearance="@style/TextAppearance.AppCompat.Body1" />
 
     <TextView
-        android:id="@+id/textView"
+        android:id="@+id/profName"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:paddingTop="8dp"
         android:textColor="#015101"
         android:fontFamily="@font/font1"
         android:textSize="20dp"
-        android:text="Rajeshwari" />
+        android:text="" />
 
 </LinearLayout>
