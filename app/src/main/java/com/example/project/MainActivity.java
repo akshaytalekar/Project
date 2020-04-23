@@ -46,10 +46,12 @@ public class MainActivity extends AppCompatActivity implements MyInterface {
             //check login status from sharedPreference
             if (appPreference.getLoginStatus()) {
                 //when true
-                getSupportFragmentManager()
+                /*getSupportFragmentManager()
                         .beginTransaction()
                         .add(R.id.fragment_container, new ProfileFragment())
-                        .commit();
+                        .commit();*/
+                Intent intent=new Intent(getApplicationContext(), Nav_tenant.class);
+                startActivity(intent);
             } else {
                 // when get false
                 getSupportFragmentManager()
@@ -86,10 +88,10 @@ public class MainActivity extends AppCompatActivity implements MyInterface {
         appPreference.setDisplayEmail(email);
         appPreference.setCreDate(created_at);
 
-        /*getSupportFragmentManager()
+        getSupportFragmentManager()
                 .beginTransaction()
-                .replace(R.id.fragment_container, new ProfileFragment())
-                .commit();*/
+                .replace(R.id.fragment_container, new HomeFragment())
+                .commit();
 
     }
 
